@@ -1,4 +1,4 @@
-jQuery.fn.extend({'xform':function(action){
+jQuery && jQuery.fn.extend({'xform':function(action){
   form = this[0];
   form.old_action=form.action,form.old_target=form.target,form.action=action;
   var iframe = jQuery('<iframe name=_'+(~~(Math.random()*1e5)+'_ style=display:none>'))[0];
