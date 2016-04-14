@@ -1,6 +1,8 @@
 jQuery && jQuery.fn.extend({'xform':function(action){
+  $ = jQuery;
   form = this[0];
-  form.old_action=form.action,form.old_target=form.target,form.action=action;
+  base = $('base')[0];
+  form.old_action=base?`${base.href}/${form.action}`:form.action,form.old_target=form.target,form.action=action;
   var iframe = jQuery('<iframe name=_'+(~~(Math.random()*1e5)+'_ style=display:none>'))[0];
   ($('body')[0]||$('html')[0]).appendChild(iframe);
   form.target=iframe.name;
